@@ -3,6 +3,9 @@ var hbs = require('hbs');
 
 const app = express();
 
+// consider port from env
+var port = process.env.PORT || 5004;
+
 // set templating engine
 app.set('view engine', 'hbs');
 
@@ -36,6 +39,6 @@ app.get('/some', (req, res) => {
 
 
 // web server listens here
-app.listen(5004, () => {
-	console.log('listening on port 5004');
+app.listen(port, () => {
+	console.log(`listening on port ${port}`);
 });
