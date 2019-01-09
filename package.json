@@ -1,16 +1,16 @@
 {
-  "name": "yargs-demo",
+  "name": "webapp",
   "version": "1.0.0",
-  "description": "yargs demo",
-  "main": "yargs.js",
+  "description": "webapp",
+  "main": "server.js",  
   "scripts": {
-    "start": "node yargs.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "shree",
   "license": "ISC",
   "dependencies": {
     "express": "^4.16.4",
-    "yargs": "^12.0.5"
+    "hbs": "^4.0.1"
   }
 }
