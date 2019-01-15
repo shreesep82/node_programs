@@ -1,7 +1,7 @@
 {
-  "name": "mocha-test",
+  "name": "spies",
   "version": "1.0.0",
-  "description": "mocha testing utility",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "test": "mocha **/*.test.js",
@@ -10,8 +10,7 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "expect": "^1.20.2",
     "mocha": "^5.2.0",
-    "supertest": "^2.0.0"
+    "rewire": "^2.5.2"
   }
 }

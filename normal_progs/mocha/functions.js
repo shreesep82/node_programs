@@ -5,3 +5,9 @@ module.exports.checkIfNumber = (number) => {
 
 	return false;
 }
+
+module.exports.checkIfNumberAsync = (number, callback) => {
+	setTimeout( () => {
+		callback(typeof number === 'number')
+	}, 1000)
+}

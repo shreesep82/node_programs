@@ -16,7 +16,8 @@ it('checking if input is a number -- 2', () => {
 });
 
 it('checking if input is a number -- 3', () => {
-  expect(funs.checkIfNumber('8')).toNotBe(true)
+  var isNumber = funs.checkIfNumber('8');
+  expect(isNumber).toNotBe(true)
 });
 
 it('checking if input is a number -- 4', () => {
@@ -41,4 +42,15 @@ it('checking if object has a property -- 8', () => {
 
 it('checking if object has a property -- 9', () => {
     expect({'name' : 'shree', 'age' : '36'}).toExclude({'age' : '36'})
+})
+
+it('Check if number Async', (done) => {
+  //console.log('check if number Async callback')
+  //done();
+  funs.checkIfNumberAsync(45, (isNumber) => {
+    //console.log('checkIfNumberAsync async callback')
+    expect(isNumber).toBe(false).toBeA('boolean')
+    done();
+  })
+
 })
