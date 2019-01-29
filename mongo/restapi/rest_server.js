@@ -6,14 +6,18 @@ var app = express();
 
 app.use(body_parser.json());
 
+app.use( (req, res, next) => {
+        console.log('middleware : ', req.body);
+        next();
+});
+
 app.listen(5004, () => {
 	console.log('rest server listening on port 5004');
 })
 
-
 app.post('/rp_api1', (req, res) => {
 	console.log(req.body);
-	var data = new docStruct({name : req.body.text});
+	var data = new docStruct({name : req.body.name});
 
 	data.save().then( (doc) => {
 		console.log('doc is ', JSON.stringify(doc))
