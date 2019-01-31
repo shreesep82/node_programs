@@ -29,3 +29,6 @@ app.post('/rp_api1', (req, res) => {
 	})
 
 })
+
+module.exports.app = app;
+module.exports.docStruct = docStruct;
