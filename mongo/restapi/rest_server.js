@@ -15,6 +15,17 @@ app.listen(5004, () => {
 	console.log('rest server listening on port 5004');
 })
 
+app.get('/rp_get_api1', (req, res) => {
+	console.log(req.body);
+
+  // get all docs from database
+  docStruct.find().then((docs) => {
+    console.log('docs: ', docs)
+    res.send(docs)
+  })
+
+})
+
 app.post('/rp_api1', (req, res) => {
 	console.log(req.body);
 	var data = new docStruct({name : req.body.name});
