@@ -8,6 +8,7 @@ var sleep = require('sleep')
 
 // make sure to empty mongo db collection in the begining
 beforeEach((done) => {
+	/*
 	docStruct.deleteMany({}, (err) => {
 		if(err) {
 			return console.log('find and remove: ', err);
@@ -16,12 +17,32 @@ beforeEach((done) => {
 		console.log('user deleted');
 		done();
 	});
+	*/
+
+/*
+	docStruct.deleteMany({}).then( (result) => {
+		console.log('deleteMany: ', result);
+		done();
+	})
+	.catch( (err) => {
+		console.log(err);
+	});
+*/
+
+var await_fun = async () => {
+	var result = await docStruct.deleteMany({});
+	console.log('deleteMany: ', result);
+	done();
+}
+
+await_fun();
+
+
 
 })
 
 describe('Test rest server end points by posting some data', () => {
   it('test /rp_api1', (done) => {
-
 
     //send request and check it's response
     request(app)
@@ -45,6 +66,9 @@ describe('Test rest server end points by posting some data', () => {
 			})
 
       })
+
+			
+
 
 
   })
