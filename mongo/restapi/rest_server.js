@@ -41,5 +41,35 @@ app.post('/rp_api1', (req, res) => {
 
 })
 
+const {ObjectId} = require('mongodb');
+
+app.get('/rp_get_ap1/:id', (req, res) => {
+        console.log('get by id');
+
+        var id = req.params.id
+
+        // validate id
+        if(ObjectId.isValid(id)) {
+                // get object from mongo
+                docStruct.findById(id).then( (doc) => {
+                        if(doc == null) {
+                                console.log('id not found');
+                                res.status(404).send({err: 'Id not found'});
+                                return;
+                        }
+
+                        res.status(200).send(doc);
+                })
+                .catch( (err) => {
+                        console.log('mongo find failed');
+                        res.status(400).send({err: 'mongo find failed'});
+                });
+        }
+        else {
+                console.log('invalid id');
+                res.status(400).send({err: 'Invalid id'});
+        }
+});
+
 module.exports.app = app;
 module.exports.docStruct = docStruct;

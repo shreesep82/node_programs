@@ -7,7 +7,8 @@
     "test": "mocha rest_server.test.js",
     "test-watch": "nodemon --exec 'npm test'",
     "test-get": "mocha rest_server_get.test.js",
-    "test-get-watch" : "nodemon --exec 'npm test-get'" 
+    "test-getid": "mocha rest_server_getid.test.js",
+    "test-get-watch": "nodemon --exec 'npm test-get'"
   },
   "author": "",
   "license": "ISC",

@@ -4,8 +4,6 @@ const request = require('supertest');
 const {app} = require('./rest_server');
 const {docStruct} = require('./rest_server')
 
-var sleep = require('sleep')
-
 // make sure to empty mongo db collection in the begining
 beforeEach((done) => {
 	/*
@@ -37,8 +35,6 @@ var await_fun = async () => {
 
 await_fun();
 
-
-
 })
 
 describe('Test rest server end points by posting some data', () => {
@@ -66,10 +62,6 @@ describe('Test rest server end points by posting some data', () => {
 			})
 
       })
-
-			
-
-
 
   })
 
