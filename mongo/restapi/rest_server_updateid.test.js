@@ -53,10 +53,11 @@ describe('Test rest server end points by updating data using id as param', () =>
                 expect(doc.name).toBe('kanth')
 
                 docStruct.find().then((docs) => {
+                        var _docs = new docStruct(docs[0]);
                         console.log('docs in db: ', docs)
                         expect(docs.length).toBe(1)
-                        console.log('ts: ', docs[0].timestamp);
-                        expect(docs[0].hasOwnProperty('timestamp')).toBe(true)
+                        console.log('ts: ', _docs.timestamp);
+                        expect(_docs.hasOwnProperty('timestamp')).toBe(true)
                         done();
                 })
                 .catch((err) => {
