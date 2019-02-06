@@ -4,22 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "start": "node restapi/rest_server.js",
     "test": "mocha rest_server.test.js",
     "test-watch": "nodemon --exec 'npm test'",
     "test-get": "mocha rest_server_get.test.js",
     "test-getid": "mocha rest_server_getid.test.js",
+    "test-deleteid": "mocha rest_server_deleteid.test.js",
+    "test-updateid": "mocha rest_server_updateid.test.js",
     "test-get-watch": "nodemon --exec 'npm test-get'"
+  },
+  "engines": {
+    "node": "10.1.0"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.15.2",
-    "express": "^4.14.0"
+    "express": "^4.14.0",
+    "lodash": "^4.17.11"
   },
   "devDependencies": {
     "expect": "^1.20.2",
     "mocha": "^3.5.3",
-    "mongoose": "^5.4.8",
+    "mongoose": "^5.4.10",
     "nodemon": "^1.10.2",
     "sleep": "^6.0.0",
     "supertest": "^2.0.1"
